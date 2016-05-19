@@ -16,7 +16,7 @@ class Machine {
 class Camera extends Machine {
     @Override
     public String toString() {
-        return "I am a camera";
+        return "I am a happy camera";
     }
      
     public void snap() {
@@ -40,17 +40,21 @@ public class App {
  
         showList(list2);
         showList2(list1);
-        showList3(list1);
+        showList3(list2);
     }
  
+    //upper bound of wild card
+    
     public static void showList(ArrayList<? extends Machine> list) {
         for (Machine value : list) {
             System.out.println(value);
             value.start();
+       
         }
  
     }
      
+    //lower bound of wild card
     public static void showList2(ArrayList<? super Camera> list) {
         for (Object value : list) {
             System.out.println(value);
